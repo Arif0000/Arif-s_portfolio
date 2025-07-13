@@ -18,6 +18,28 @@
             color: white;
             padding: 40px 20px;
             text-align: center;
+            position: relative;
+        }
+
+        nav {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        nav a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            background-color: #0057e7;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #003f9e;
         }
 
         .profile-img {
@@ -61,6 +83,12 @@
 <body>
 
 <header>
+    <nav>
+        <a href="#courses">Courses</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
     <h1>Mohd Arif Ansari</h1>
     <p>Data Scientist | AI/ML Engineer | Big Data Engineer | Data Analyst</p>
 </header>
@@ -84,6 +112,31 @@
     </div>
 </div>
 
+<!-- Placeholder Sections -->
+<div class="container" id="courses">
+    <h2>Courses</h2>
+    <p>Add your key learning or certifications here.</p>
+</div>
+
+<div class="container" id="certifications">
+    <h2>Certifications</h2>
+    <p>Add your certifications such as AWS, Google Cloud, Databricks, etc.</p>
+</div>
+
+<div class="container" id="projects">
+    <h2>Projects</h2>
+    <p>Describe your top data science projects here with GitHub links.</p>
+</div>
+
+<div class="container" id="contact">
+    <h2>Contact Form</h2>
+    <form action="mailto:ariflpu786@gmail.com" method="post" enctype="text/plain">
+        <p><input type="text" name="name" placeholder="Your Name" required></p>
+        <p><input type="email" name="email" placeholder="Your Email" required></p>
+        <p><textarea name="message" rows="5" placeholder="Your Message" required></textarea></p>
+        <p><button type="submit">Send</button></p>
+    </form>
+</div>
+
 </body>
 </html>
-
