@@ -44,6 +44,7 @@ function showCerts() {
     🎓 Azure Cloud (Data & ML)<br>
     🎓 Azure Machine Learning<br>
     🎓 Databricks & Big Data (in progress)
+    🧑‍💻  <a href="https://learn.microsoft.com/en-gb/users/mohdarifansari-4747/" target="_blank">Microsoft Learn</a>
   `);
 }
 
@@ -53,6 +54,6 @@ function showContact() {
     📧 Email: ariflpu786@gmail.com<br>
     💼 <a href="https://www.linkedin.com/in/mohd-arif-ansari/" target="_blank">LinkedIn</a><br>
     🧑‍💻 <a href="https://github.com/Arif0000" target="_blank">GitHub</a>
-    🧑‍💻  <a href="https://learn.microsoft.com/en-gb/users/mohdarifansari-4747/" target="_blank">GitHub</a>
+    
   `);
 }
