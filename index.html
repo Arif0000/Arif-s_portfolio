@@ -1,68 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohd Arif Ansari - Data Scientist</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arif | Data Scientist Chatbot</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-<header>
-    <nav>
-        <a href="#courses">Courses</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <h1>Mohd Arif Ansari</h1>
-    <p> Data Scientist | AI/ML Engineer </p>
-</header>
+<div class="chat-container">
 
-<div class="container" align="center">
-    <img src="./Arif Final pic.png" alt="Profile Photo" class="profile-img">
-    
-    <h2>About Me</h2>
-    <p>
-        I’m a Data Scientist with experience in building scalable machine learning pipelines, deploying production-grade models, and solving business-critical problems across domains such as retail, finance, and healthcare.
-        <br><br>
-        My strengths lie in building end-to-end data solutions — from data wrangling and modeling to deploying with MLOps practices. I specialize in Python, PySpark, SQL, Scikit-learn, NLP, and tools like MLflow, Airflow, and FastAPI.
-        <br><br>
-        I’m passionate about transforming data into actionable insights that drive strategic decision-making.
-    </p>
-
-    <div class="social-links">
-        <a href="https://www.linkedin.com/in/mohd-arif-ansari/" target="_blank">LinkedIn</a>
-        <a href="https://github.com/Arif0000" target="_blank">GitHub</a>
-        <a href="mailto:ariflpu786@gmail.com">Email</a>
+  <header class="chat-header">
+    <img src="Arif Final pic.png" alt="Arif" />
+    <div>
+      <h2>Mohd Arif Ansari</h2>
+      <p>Data Scientist | AI/ML Engineer</p>
     </div>
+  </header>
+
+  <div class="chat-body" id="chatBody">
+
+    <div class="bot-msg">
+      👋 Hi, I’m Arif — a Data Scientist.  
+      Want to know more about me?
+    </div>
+
+  </div>
+
+  <div class="chat-actions">
+    <button onclick="showAbout()">About Me</button>
+    <button onclick="showProjects()">Projects</button>
+    <button onclick="showCerts()">Certifications</button>
+    <button onclick="showContact()">Contact</button>
+  </div>
+
 </div>
 
-<!-- Placeholder Sections -->
-<div class="container" id="courses">
-    <h2>Courses</h2>
-    <p>Add your key learning or certifications here.</p>
-</div>
-
-<div class="container" id="certifications">
-    <h2>Certifications</h2>
-    <p>Add your certifications such as AWS, Google Cloud, Databricks, etc.</p>
-</div>
-
-<div class="container" id="projects">
-    <h2>Projects</h2>
-    <p>Describe your top data science projects here with GitHub links.</p>
-</div>
-
-<div class="container" id="contact">
-    <h2>Contact Form</h2>
-    <form action="mailto:ariflpu786@gmail.com" method="post" enctype="text/plain">
-        <p><input type="text" name="name" placeholder="Your Name" required></p>
-        <p><input type="email" name="email" placeholder="Your Email" required></p>
-        <p><textarea name="message" rows="5" placeholder="Your Message" required></textarea></p>
-        <p><button type="submit">Send</button></p>
-    </form>
-</div>
-
+<script src="script.js"></script>
 </body>
 </html>
