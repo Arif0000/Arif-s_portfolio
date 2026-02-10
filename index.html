@@ -1,151 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Arif | AI & ML Engineer</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arif | AI & ML Engineer</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo">Arif.dev</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+  <!-- ================= HOME / LANDING PAGE ================= -->
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-text">
-            <h1>Hi, I'm Arif 👋</h1>
-            <h2>AI & Machine Learning Engineer</h2>
-            <p>
-                I build intelligent systems using Machine Learning, Deep Learning,
-                LLMs, RAG pipelines, and Agentic AI.
-            </p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn primary">View Projects</a>
-                <a href="#" class="btn secondary">Download Resume</a>
-            </div>
-        </div>
-        <div class="hero-image">
-            <div class="image-placeholder">Arif_image.png</div>
-        </div>
-    </section>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Arif.dev</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-    <!-- About -->
-    <section id="about" class="section">
-        <h2>About Me</h2>
-        <p>
-            I am an AI & Machine Learning Engineer with a strong foundation in data engineering
-            and end-to-end ML systems. I specialize in building intelligent applications
-            that combine data, models, and scalable deployment.
-        </p>
-    </section>
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <h1>Hi, I'm Arif 👋</h1>
+      <h2>AI & Machine Learning Engineer</h2>
+      <p>
+        I build intelligent systems using Machine Learning, Deep Learning,
+        LLMs, RAG pipelines, and Agentic AI.
+      </p>
+      <a href="#projects" class="hero-btn">View My Work</a>
+    </div>
+  </section>
 
-    <!-- Skills -->
-    <section id="skills" class="section">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-box">
-                <h3>ML & AI</h3>
-                <ul>
-                    <li>Supervised & Unsupervised Learning</li>
-                    <li>Deep Learning (CNN, RNN, Transformers)</li>
-                    <li>Reinforcement Learning</li>
-                    <li>NLP, LLMs, RAG</li>
-                </ul>
-            </div>
+  <!-- About -->
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>
+      I am an AI & ML Engineer with experience in building end-to-end
+      machine learning systems, recommendation engines, and AI-powered
+      applications using modern LLM architectures.
+    </p>
+  </section>
 
-            <div class="skill-box">
-                <h3>Tools & Frameworks</h3>
-                <ul>
-                    <li>Python, NumPy, Pandas</li>
-                    <li>Scikit-learn</li>
-                    <li>TensorFlow, PyTorch</li>
-                    <li>LangChain, HuggingFace</li>
-                </ul>
-            </div>
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <h2>Featured Projects</h2>
 
-            <div class="skill-box">
-                <h3>MLOps & Backend</h3>
-                <ul>
-                    <li>Model Evaluation</li>
-                    <li>FastAPI / Flask</li>
-                    <li>Docker (Basics)</li>
-                    <li>Git & GitHub</li>
-                </ul>
-            </div>
+    <div class="project-card">
+      <h3>Agentic AI System</h3>
+      <p>Multi-agent AI system for autonomous task execution.</p>
+    </div>
 
-            <div class="skill-box">
-                <h3>Frontend</h3>
-                <ul>
-                    <li>HTML, CSS</li>
-                    <li>JavaScript</li>
-                    <li>Basic React</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+    <div class="project-card">
+      <h3>RAG Medical Assistant</h3>
+      <p>Personalized medical recommendations using RAG architecture.</p>
+    </div>
+  </section>
 
-    <!-- Projects -->
-    <section id="projects" class="section">
-        <h2>Featured Projects</h2>
-        <div class="projects-grid">
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Email: ariflpu786@gmail.com</p>
+  </section>
 
-            <div class="project-card">
-                <h3>Agentic AI System</h3>
-                <p>Multi-agent system for automated reasoning and task execution.</p>
-                <span>LLMs · LangChain · Python</span>
-                <div class="project-links">
-                    <a href="#">GitHub</a>
-                    <a href="#">Demo</a>
-                </div>
-            </div>
+  <!-- ================= CHATBOT (FLOATING) ================= -->
 
-            <div class="project-card">
-                <h3>RAG Medical Assistant</h3>
-                <p>Personalized medical recommendations using RAG architecture.</p>
-                <span>LLM · Vector DB · NLP</span>
-                <div class="project-links">
-                    <a href="#">GitHub</a>
-                    <a href="#">Demo</a>
-                </div>
-            </div>
+  <div class="chat-container">
 
-            <div class="project-card">
-                <h3>Recommendation System</h3>
-                <p>End-to-end ML-based recommendation system.</p>
-                <span>ML · Pandas · Scikit-learn</span>
-                <div class="project-links">
-                    <a href="#">GitHub</a>
-                    <a href="#">Demo</a>
-                </div>
-            </div>
+    <header class="chat-header">
+      <img src="Arif Final pic.png" alt="Arif" />
+      <div>
+        <h2>Mohd Arif Ansari</h2>
+        <p>AI/ML Engineer</p>
+      </div>
+    </header>
 
-        </div>
-    </section>
+    <div class="chat-body" id="chatBody">
+      <div class="bot-msg">
+        👋 Hi, I’m Arif — your AI portfolio assistant.  
+        What would you like to know?
+      </div>
+    </div>
 
-    <!-- Contact -->
-    <section id="contact" class="section contact">
-        <h2>Contact</h2>
-        <p>Let’s build something intelligent together.</p>
-        <div class="contact-links">
-            <a href="mailto:your@email.com">Email</a>
-            <a href="#">GitHub</a>
-            <a href="#">LinkedIn</a>
-        </div>
-    </section>
+    <div class="chat-actions">
+      <button onclick="showAbout()">About Me</button>
+      <button onclick="showProjects()">Projects</button>
+      <button onclick="showCerts()">Certifications</button>
+      <button onclick="showContact()">Contact</button>
+    </div>
 
-    <footer>
-        <p>© 2026 Arif. Built with ❤️ and Machine Learning.</p>
-    </footer>
+  </div>
 
+  <script src="script.js"></script>
 </body>
 </html>
