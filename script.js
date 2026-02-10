@@ -19,32 +19,36 @@ function addBotMsg(text) {
 function showAbout() {
   addUserMsg("Tell me about yourself");
   addBotMsg(`
-    I’m a Data Scientist experienced in building scalable ML pipelines,
-    deploying production-grade models, and solving real-world problems in
-    retail, finance, and healthcare.<br><br>
-    Skills: Python, PySpark, SQL, Scikit-learn, NLP<br>
-    Tools: MLflow, Airflow, FastAPI
+    I’m an AI & Machine Learning Engineer experienced in building
+    scalable ML pipelines, deploying production-grade models,
+    and solving real-world problems.<br><br>
+    <b>Skills:</b> Python, SQL, NLP, ML, DL<br>
+    <b>Tools:</b> Scikit-learn, TensorFlow, PyTorch, FastAPI
   `);
 }
 
 function showProjects() {
   addUserMsg("Show me your projects");
   addBotMsg(`
-     <b>News Summarization (NLP)</b><br>
-    Fine-tuned long-document transformer models.<br><br>
-     <b>Recommendation System</b><br>
-    End-to-end personalized recommender with ML pipelines.<br><br>
-    🔗 GitHub: <a href="https://github.com/Arif0000" target="_blank">View Projects</a>
+    <b>Agentic AI System</b><br>
+    Multi-agent AI for automated reasoning.<br><br>
+
+    <b>RAG Medical Assistant</b><br>
+    Personalized medical recommendation system.<br><br>
+
+    🔗 <a href="https://github.com/Arif0000" target="_blank">View GitHub</a>
   `);
 }
 
 function showCerts() {
   addUserMsg("What certifications do you have?");
   addBotMsg(`
-    🎓 Azure Cloud (Data & ML)<br>
+    🎓 Azure Data & AI Fundamentals<br>
     🎓 Azure Machine Learning<br>
-    🎓 Databricks & Big Data (in progress)
-    🧑‍💻  <a href="https://learn.microsoft.com/en-gb/users/mohdarifansari-4747/" target="_blank">Microsoft Learn</a>
+    🎓 Databricks & Big Data (In Progress)<br><br>
+    🔗 <a href="https://learn.microsoft.com/en-gb/users/mohdarifansari-4747/" target="_blank">
+    Microsoft Learn
+    </a>
   `);
 }
 
@@ -54,6 +58,5 @@ function showContact() {
     📧 Email: ariflpu786@gmail.com<br>
     💼 <a href="https://www.linkedin.com/in/mohd-arif-ansari/" target="_blank">LinkedIn</a><br>
     🧑‍💻 <a href="https://github.com/Arif0000" target="_blank">GitHub</a>
-    
   `);
 }
