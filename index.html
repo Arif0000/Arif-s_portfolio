@@ -8,84 +8,91 @@
 </head>
 <body>
 
-  <!-- ========== NAVBAR ========== -->
-  <nav class="navbar">
-    <div class="logo">Arif.dev</div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <!-- ========== HEADER / NAVBAR ========== -->
+  <header class="header">
+    <nav class="navbar">
+      <div class="logo">Arif.dev</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
 
-  <!-- ========== HERO ========== -->
-  <section id="home" class="hero">
-    <h1>Hi, I’m Arif 👋</h1>
-    <h2>AI & Machine Learning Engineer</h2>
-    <p>
-      I build intelligent systems using Machine Learning, Deep Learning,
-      LLMs, RAG pipelines, and Agentic AI.
-    </p>
-    <a href="#projects" class="primary-btn">View Projects</a>
-  </section>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <h1>Hi, I’m Arif 👋</h1>
+      <h2>AI & Machine Learning Engineer</h2>
+      <p>
+        I build intelligent systems using Machine Learning, Deep Learning,
+        LLMs, RAG pipelines, and Agentic AI.
+      </p>
+      <a href="#projects" class="primary-btn">View Projects</a>
+    </section>
+  </header>
 
-  <!-- ========== ABOUT ========== -->
-  <section id="about" class="section">
-    <h2>About Me</h2>
-    <p>
-      AI & ML Engineer with experience building end-to-end machine learning
-      systems, intelligent applications, and scalable AI solutions.
-    </p>
-  </section>
+  <!-- ========== MAIN CONTENT (WHITE) ========== -->
+  <main>
 
-  <!-- ========== SKILLS ========== -->
-  <section id="skills" class="section dark">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <h3>AI & ML</h3>
-        <p>ML, DL, NLP, LLMs, RAG, RL</p>
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p>
+        AI & ML Engineer with experience in building end-to-end machine learning
+        systems and production-ready AI applications.
+      </p>
+    </section>
+
+    <section id="skills" class="section">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="card">
+          <h3>AI & ML</h3>
+          <p>ML, DL, NLP, LLMs, RAG, RL</p>
+        </div>
+        <div class="card">
+          <h3>Tools</h3>
+          <p>Python, Pandas, NumPy, Scikit-learn, PyTorch</p>
+        </div>
+        <div class="card">
+          <h3>MLOps</h3>
+          <p>FastAPI, Docker, Git, MLflow</p>
+        </div>
       </div>
-      <div class="skill-card">
-        <h3>Tools</h3>
-        <p>Python, Pandas, NumPy, Scikit-learn, PyTorch</p>
-      </div>
-      <div class="skill-card">
-        <h3>MLOps</h3>
-        <p>FastAPI, Docker, Git, MLflow</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ========== PROJECTS ========== -->
-  <section id="projects" class="section">
-    <h2>Projects</h2>
-    <div class="project-card">
-      <h3>Agentic AI System</h3>
-      <p>Multi-agent AI for autonomous reasoning and execution.</p>
-    </div>
-    <div class="project-card">
-      <h3>RAG Medical Assistant</h3>
-      <p>Personalized medical recommendation system using RAG.</p>
-    </div>
-  </section>
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="card">
+        <h3>Agentic AI System</h3>
+        <p>Multi-agent AI system for autonomous reasoning.</p>
+      </div>
+      <div class="card">
+        <h3>RAG Medical Assistant</h3>
+        <p>Personalized medical recommendation system using RAG.</p>
+      </div>
+    </section>
 
-  <!-- ========== CONTACT ========== -->
-  <section id="contact" class="section dark">
-    <h2>Contact</h2>
-    <p>Email: <b>ariflpu786@gmail.com</b></p>
-    <p>GitHub: github.com/Arif0000</p>
-    <p>LinkedIn: Mohd Arif Ansari</p>
-  </section>
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p>Email: <b>ariflpu786@gmail.com</b></p>
+      <p>GitHub: github.com/Arif0000</p>
+      <p>LinkedIn: Mohd Arif Ansari</p>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER (BLUE) ========== -->
+  <footer class="footer">
+    © 2026 Arif · Built with ❤️ & AI
+  </footer>
 
   <!-- ========== CHAT TOGGLE BUTTON ========== -->
   <button id="chat-toggle">💬</button>
 
   <!-- ========== CHATBOT ========== -->
   <div class="chat-container">
-
     <header class="chat-header">
       <img src="Arif Final pic.png" alt="Arif"/>
       <div class="chat-title">
@@ -98,17 +105,15 @@
     <div class="chat-body" id="chatBody">
       <div class="bot-msg">
         👋 Hi, I’m Arif — your AI portfolio assistant.
-        What would you like to know?
       </div>
     </div>
 
     <div class="chat-actions">
-      <button onclick="showAbout()">About Me</button>
+      <button onclick="showAbout()">About</button>
       <button onclick="showProjects()">Projects</button>
-      <button onclick="showCerts()">Certifications</button>
+      <button onclick="showCerts()">Certs</button>
       <button onclick="showContact()">Contact</button>
     </div>
-
   </div>
 
   <script src="script.js"></script>
