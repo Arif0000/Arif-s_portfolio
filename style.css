@@ -114,24 +114,28 @@ main {
 .chat-container {
   position: fixed;
   bottom: 90px;
-  right: 20px;
+  right: 25px;
   width: clamp(320px, 28vw, 380px);
   height: clamp(420px, 60vh, 520px);
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
   display: none;
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  flex-direction: column;
   overflow: hidden;
+  z-index: 9999;
 }
 
 .chat-header {
   display: flex;
   gap: 12px;
-  padding: 16px;
+  padding: 18px;
   background: #2563eb;
   color: white;
   align-items: center;
+  font-weight: 600;
 }
+
 
 .chat-header img {
   width: 40px;
