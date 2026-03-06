@@ -1,8 +1,12 @@
-/* ================================
+/* =================================
    LOAD LAST UPDATED GITHUB REPOS
-================================ */
+================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
 
 const repoContainer = document.getElementById("githubRepos");
+
+if (repoContainer) {
 
 fetch("https://api.github.com/users/Arif0000/repos")
 
@@ -10,56 +14,57 @@ fetch("https://api.github.com/users/Arif0000/repos")
 
 .then(data => {
 
-    /* sort repos by last updated date */
-    const latestRepos = data
-        .sort((a,b) => new Date(b.updated_at) - new Date(a.updated_at))
-        .slice(0,6);
+/* sort repos by last updated */
 
-    latestRepos.forEach(repo => {
+const latestRepos = data
+.sort((a,b) => new Date(b.updated_at) - new Date(a.updated_at))
+.slice(0,6);
 
-        const card = document.createElement("div");
-        card.classList.add("card");
+latestRepos.forEach(repo => {
 
-        card.innerHTML = `
-        <h3>${repo.name}</h3>
+const card = document.createElement("div");
 
-        <p>
-        ${repo.description || "Machine Learning / AI Project"}
-        </p>
+card.classList.add("card");
 
-        <p class="repo-meta">
+card.innerHTML = `
+<h3>${repo.name}</h3>
 
-        ⭐ ${repo.stargazers_count}  
-        🍴 ${repo.forks_count}
+<p>
+${repo.description || "Machine Learning / AI Project"}
+</p>
 
-        <br>
+<p class="repo-meta">
 
-        Last updated: 
-        ${new Date(repo.updated_at).toLocaleDateString()}
+⭐ ${repo.stargazers_count}  
+🍴 ${repo.forks_count}
 
-        </p>
+<br>
 
-        <a href="${repo.html_url}" target="_blank">
-        View Project →
-        </a>
-        `;
+Last updated:
+${new Date(repo.updated_at).toLocaleDateString()}
 
-        repoContainer.appendChild(card);
+</p>
 
-    });
+<a href="${repo.html_url}" target="_blank">
+View Project →
+</a>
+`;
+
+repoContainer.appendChild(card);
+
+});
 
 })
 
 .catch(error => {
 
-    console.error("GitHub API error:", error);
+console.error("GitHub API error:", error);
 
-    repoContainer.innerHTML =
-    "<p>Unable to load projects. Please check later.</p>";
+repoContainer.innerHTML =
+"<p>Unable to load projects.</p>";
 
 });
 
-
 }
 
-uploadInput.addEventListener("change", runModel);
+});
