@@ -1,82 +1,128 @@
+/* ============================
+   3D NEURAL NETWORK (FRONTEND)
+============================ */
+
+const container = document.getElementById("three-container");
+
 const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera(
 75,
-window.innerWidth/window.innerHeight,
+window.innerWidth / window.innerHeight,
 0.1,
 1000
 );
 
-const renderer = new THREE.WebGLRenderer({alpha:true});
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
 
-renderer.setSize(window.innerWidth,window.innerHeight);
+renderer.setSize(window.innerWidth, window.innerHeight);
 
-document
-.getElementById("three-container")
-.appendChild(renderer.domElement);
+container.appendChild(renderer.domElement);
 
-camera.position.z = 60;
+camera.position.z = 70;
 
-const nodeMaterial = new THREE.MeshBasicMaterial({
-color:0x38bdf8
-});
 
-const nodeGeometry = new THREE.SphereGeometry(0.5,16,16);
-
-fetch("http://127.0.0.1:8000/neural-network")
-
-.then(res=>res.json())
-
-.then(data=>{
+/* ============================
+   CREATE NODES
+============================ */
 
 const nodes = [];
 
-data.nodes.forEach(n=>{
+const nodeGeometry = new THREE.SphereGeometry(0.6, 16, 16);
 
-const node = new THREE.Mesh(nodeGeometry,nodeMaterial);
+const nodeMaterial = new THREE.MeshBasicMaterial({
+color: 0x38bdf8
+});
 
-node.position.set(n.x,n.y,n.z);
+const NODE_COUNT = 80;
+
+for(let i = 0; i < NODE_COUNT; i++){
+
+const node = new THREE.Mesh(nodeGeometry, nodeMaterial);
+
+node.position.x = (Math.random() - 0.5) * 80;
+node.position.y = (Math.random() - 0.5) * 80;
+node.position.z = (Math.random() - 0.5) * 80;
 
 scene.add(node);
 
 nodes.push(node);
 
+}
+
+
+/* ============================
+   CREATE CONNECTIONS
+============================ */
+
+const lineMaterial = new THREE.LineBasicMaterial({
+color: 0x38bdf8,
+transparent: true,
+opacity: 0.3
 });
 
+for(let i = 0; i < nodes.length; i++){
 
-data.edges.forEach(edge=>{
+for(let j = i + 1; j < nodes.length; j++){
 
-const source = nodes[edge.source];
-const target = nodes[edge.target];
+const dx = nodes[i].position.x - nodes[j].position.x;
+const dy = nodes[i].position.y - nodes[j].position.y;
+const dz = nodes[i].position.z - nodes[j].position.z;
+
+const distance = Math.sqrt(dx*dx + dy*dy + dz*dz);
+
+/* connect nearby nodes */
+
+if(distance < 20){
 
 const points = [];
 
-points.push(source.position);
-points.push(target.position);
+points.push(nodes[i].position);
+points.push(nodes[j].position);
 
-const geometry =
-new THREE.BufferGeometry().setFromPoints(points);
+const geometry = new THREE.BufferGeometry().setFromPoints(points);
 
-const material =
-new THREE.LineBasicMaterial({color:0x38bdf8});
-
-const line = new THREE.Line(geometry,material);
+const line = new THREE.Line(geometry, lineMaterial);
 
 scene.add(line);
 
-});
+}
 
-});
+}
 
+}
+
+
+/* ============================
+   ANIMATION
+============================ */
 
 function animate(){
 
 requestAnimationFrame(animate);
 
-scene.rotation.y += 0.002;
+/* rotate neural network */
 
-renderer.render(scene,camera);
+scene.rotation.y += 0.0015;
+scene.rotation.x += 0.0005;
+
+renderer.render(scene, camera);
 
 }
 
 animate();
+
+
+/* ============================
+   RESPONSIVE
+============================ */
+
+window.addEventListener("resize", () => {
+
+camera.aspect = window.innerWidth / window.innerHeight;
+
+camera.updateProjectionMatrix();
+
+renderer.setSize(window.innerWidth, window.innerHeight);
+
+});
