@@ -6,12 +6,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Mohd Arif Ansari | Data Scientist & AI Engineer</title>
+<title>Mohd Arif Ansari | AI Engineer</title>
 
 <link rel="stylesheet" href="style.css">
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
 </head>
 
@@ -25,19 +27,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
 
 <a href="#home">Home</a>
 <a href="#about">About</a>
-<a href="#research">Research</a>
-<a href="#github-projects">Projects</a>
+<a href="#experience">Experience</a>
+<a href="#education">Education</a>
+<a href="#projects">Projects</a>
+<a href="#certificates">Certificates</a>
 <a href="#ai-demo">AI Demo</a>
 <a href="#contact">Contact</a>
 
 </div>
 
-<a href="https://drive.google.com"
-target="_blank"
-class="resume-nav">
-
+<a href="#" class="resume-nav">
 <i class="fas fa-file-alt"></i> Resume
-
 </a>
 
 </div>
@@ -47,7 +47,7 @@ class="resume-nav">
 
 <header class="hero" id="home">
 
-<canvas id="neuralCanvas"></canvas>
+<div id="three-container"></div>
 
 <div class="hero-container">
 
@@ -61,7 +61,7 @@ class="resume-nav">
 
 <div class="social-links">
 
-<a href="https://www.linkedin.com/in/mohd-arif-ansari/" class="btn-social btn-linkedin">
+<a href="https://linkedin.com" class="btn-social btn-linkedin">
 <i class="fab fa-linkedin"></i> LinkedIn
 </a>
 
@@ -69,21 +69,14 @@ class="resume-nav">
 <i class="fab fa-github"></i> GitHub
 </a>
 
-<a href="#" class="btn-social btn-resume">
-<i class="fas fa-file-alt"></i> Resume
-</a>
-
 </div>
 
 </div>
-
 
 <div class="hero-right">
 
 <video class="intro-video" controls autoplay muted loop>
-
 <source src="intro.mp4" type="video/mp4">
-
 </video>
 
 </div>
@@ -110,44 +103,52 @@ Big Data & AI Engineer experience building scalable distributed data platforms a
 </section>
 
 
-<section class="container" id="research">
+<section class="container" id="experience">
 
-<h2 class="section-title">Research Papers</h2>
+<h2 class="section-title">Experience</h2>
+
+<div class="card">
+
+<h3>Senior Data Engineer</h3>
+
+<p>Senior Data Engineer with experience building scalable data platforms and distributed data pipelines using Azure Databricks and PySpark. Skilled in designing batch and real-time streaming systems with Spark Structured Streaming and Kafka to process millions of records with low latency. Expertise in Delta Lake architecture, ETL/ELT automation, and performance optimization for large-scale data processing. Proven ability to develop ML-ready data pipelines and production-grade cloud data solutions on Azure.</p>
+
+<p>Distributed Data Systems & Cloud:- Apache Spark (Data Frames, Spark SQL, Structured Streaming), Delta Lake (ACID, MERGE, Time Travel, Schema Evolution), Apache Kafka, Distributed Computing, Spark Performance Tuning (Partitioning, Caching, Broadcast Joins), ETL/ELT Architecture, Incremental Processing, Data Lineage, Data Quality & Validation, Azure Data Factory, Azure Databricks, ADLS Gen2, Synapse Analytics, Cosmos DB, Key Vault. </p>
+
+</div>
+
+</section>
+
+
+<section class="container" id="education">
+
+<h2 class="section-title">Education</h2>
 
 <div class="grid">
 
 <div class="card">
 
-<h3>DeepFusion-AI</h3>
-
-<p>
-
-Multi-modal deep learning framework for breast cancer prediction
-combining imaging and clinical data.
-
-</p>
-
-<a href="#">
-<i class="fas fa-file-alt"></i> Read Paper
-</a>
+<h3>M.Tech AI & ML</h3>
+<p>Lovely Professional University</p>
+<p>2025 - 2027</p>
+<p>CGPA 8.0</p>
 
 </div>
 
+<div class="card">
+
+<h3>Advanced AI & ML Certification</h3>
+<p>IIT Madras</p>
+<p>2023 - 2024</p>
+<p>CGPA 8.5</p>
+
+</div>
 
 <div class="card">
 
-<h3>Transformer Based Stress Detection</h3>
-
-<p>
-
-Deep learning model combining physiological signals
-for mental stress classification.
-
-</p>
-
-<a href="#">
-<i class="fas fa-file-alt"></i> Read Paper
-</a>
+<h3>B.Tech Big Data Technology</h3>
+<p>Lovely Professional University</p>
+<p>CGPA 7.0</p>
 
 </div>
 
@@ -156,48 +157,57 @@ for mental stress classification.
 </section>
 
 
-<section class="container" id="github-projects">
+<section class="container" id="projects">
 
-<h2 class="section-title">Live GitHub Projects</h2>
+<h2 class="section-title">Live ML Projects</h2>
 
 <div id="githubRepos" class="grid"></div>
 
 </section>
 
 
-<section class="container" id="ai-demo">
+<section class="container" id="certificates">
 
-<h2 class="section-title">AI Demo</h2>
+<h2 class="section-title">Certificates</h2>
+
+<div class="grid">
 
 <div class="card">
+<h3>Microsoft Certified: Azure AI Engineer</h3>
+<a href="#">View Certificate</a>
+</div>
 
-<h3>Image Classification Demo</h3>
+<div class="card">
+<h3>Microsoft Certified: Data Scientist</h3>
+<a href="#">View Certificate</a>
+</div>
 
-<input type="file" id="imageUpload">
+<div class="card">
+<h3>Microsoft Certified: Data Engineer</h3>
+<a href="#">View Certificate</a>
+</div>
 
-<p id="predictionResult"></p>
+<div class="card">
+<h3>Microsoft Certified: Data Analyst</h3>
+<a href="#">View Certificate</a>
+</div>
 
 </div>
 
 </section>
-
 
 <section class="container" id="contact">
 
 <h2 class="section-title">Contact</h2>
 
 <p>
-
 <i class="fas fa-envelope"></i>
 ariflpu786@gmail.com
-
 </p>
 
 <p>
-
 <i class="fab fa-whatsapp"></i>
 +91 9779383344
-
 </p>
 
 </section>
@@ -211,6 +221,7 @@ ariflpu786@gmail.com
 
 
 <script src="script.js"></script>
+<script src="js/three-network.js"></script>
 
 </body>
 </html>
