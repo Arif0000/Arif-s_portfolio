@@ -1,54 +1,112 @@
-const chatBody = document.getElementById("chatBody");
+/* GITHUB REPOS */
 
-/* Chat messages */
-function addUserMsg(text) {
-  const div = document.createElement("div");
-  div.className = "user-msg";
-  div.innerText = text;
-  chatBody.appendChild(div);
-  chatBody.scrollTop = chatBody.scrollHeight;
+const repoContainer = document.getElementById("githubRepos");
+
+fetch("https://api.github.com/users/Arif0000/repos")
+.then(res=>res.json())
+.then(data=>{
+
+data.slice(0,6).forEach(repo=>{
+
+const card=document.createElement("div");
+
+card.classList.add("card");
+
+card.innerHTML=`
+<h3>${repo.name}</h3>
+<p>${repo.description || "AI/ML Project"}</p>
+<a href="${repo.html_url}" target="_blank">
+View Repository
+</a>
+`;
+
+repoContainer.appendChild(card);
+
+});
+
+});
+
+
+/* AI DEMO */
+
+const upload=document.getElementById("imageUpload");
+const result=document.getElementById("predictionResult");
+
+upload.addEventListener("change",()=>{
+
+result.innerText="Running AI Model...";
+
+setTimeout(()=>{
+
+const classes=["Cat","Dog","Car","Tree","Laptop"];
+
+const prediction=classes[Math.floor(Math.random()*classes.length)];
+
+result.innerText="Prediction: "+prediction;
+
+},1500);
+
+});
+
+
+/* NEURAL NETWORK BACKGROUND */
+
+const canvas=document.getElementById("neuralCanvas");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let nodes=[];
+
+for(let i=0;i<70;i++){
+
+nodes.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+vx:(Math.random()-0.5),
+vy:(Math.random()-0.5)
+});
+
 }
 
-function addBotMsg(text) {
-  const div = document.createElement("div");
-  div.className = "bot-msg";
-  div.innerHTML = text;
-  chatBody.appendChild(div);
-  chatBody.scrollTop = chatBody.scrollHeight;
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+nodes.forEach(node=>{
+
+node.x+=node.vx;
+node.y+=node.vy;
+
+ctx.beginPath();
+ctx.arc(node.x,node.y,2,0,Math.PI*2);
+ctx.fillStyle="#38bdf8";
+ctx.fill();
+
+nodes.forEach(other=>{
+
+let dx=node.x-other.x;
+let dy=node.y-other.y;
+
+let dist=Math.sqrt(dx*dx+dy*dy);
+
+if(dist<120){
+
+ctx.beginPath();
+ctx.moveTo(node.x,node.y);
+ctx.lineTo(other.x,other.y);
+ctx.strokeStyle="rgba(56,189,248,0.2)";
+ctx.stroke();
+
 }
 
-/* Buttons */
-function showAbout() {
-  addUserMsg("Tell me about yourself");
-  addBotMsg("I’m an AI & ML Engineer focused on building real-world intelligent systems.");
+});
+
+});
+
+requestAnimationFrame(animate);
+
 }
 
-function showProjects() {
-  addUserMsg("Show me your projects");
-  addBotMsg("Agentic AI System<br>RAG Medical Assistant<br><a href='https://github.com/Arif0000' target='_blank'>GitHub</a>");
-}
-
-function showCerts() {
-  addUserMsg("What certifications do you have?");
-  addBotMsg("Azure AI Fundamentals<br>Azure Machine Learning");
-}
-
-function showContact() {
-  addUserMsg("How can I contact you?");
-  addBotMsg("📧 ariflpu786@gmail.com");
-}
-
-/* Toggle logic */
-const chatToggle = document.getElementById("chat-toggle");
-const chatClose = document.getElementById("chat-close");
-const chatContainer = document.querySelector(".chat-container");
-
-chatToggle.onclick = () => {
-  chatContainer.style.display = "flex";
-  chatToggle.style.display = "none";
-};
-
-chatClose.onclick = () => {
-  chatContainer.style.display = "none";
-  chatToggle.style.display = "block";
-};
+animate();
