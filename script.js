@@ -18,7 +18,7 @@ fetch("https://api.github.com/users/Arif0000/repos")
 
 const latestRepos = data
 .sort((a,b) => new Date(b.updated_at) - new Date(a.updated_at))
-.slice(0,6);
+.slice(0,9);
 
 latestRepos.forEach(repo => {
 
